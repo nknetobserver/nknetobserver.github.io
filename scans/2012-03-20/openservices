@@ -1,0 +1,31 @@
+53/tcp open  domain  ISC BIND 9.8.1
+25/tcp open  smtp    Cisco PIX sanitized smtpd
+21/tcp    open  ftp     vsftpd
+7200/tcp  open  fodms?
+51022/tcp open  unknown
+51026/tcp open  unknown
+53/tcp open  domain  ISC BIND 9.8.1
+53/tcp open  domain  ISC BIND 9.8.1
+80/tcp open  http    Apache httpd 2.2.3 ((Red Hat))
+25/tcp    open  smtp    Cisco PIX sanitized smtpd
+60000/tcp open  unknown
+62037/tcp open  unknown
+80/tcp   open   http           Apache httpd 2.2.3 ((CentOS) DAV/2 PHP/5.1.6 mod_python/3.2.8 Python/2.4.3 mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 mod_perl/2.0.4 Perl/v5.8.8)
+110/tcp  open   pop3           qmail pop3d
+443/tcp  open   ssl/http       Apache httpd 2.2.3 ((CentOS) DAV/2 PHP/5.1.6 mod_python/3.2.8 Python/2.4.3 mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 mod_perl/2.0.4 Perl/v5.8.8)
+3000/tcp open   ppp?
+3001/tcp open   nessus?
+5000/tcp open   upnp?
+8080/tcp open   http           Icecast streaming media server
+80/tcp  open  http     Apache httpd 2.2.3 ((CentOS) DAV/2 PHP/5.1.6 mod_python/3.2.8 Python/2.4.3 mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 mod_perl/2.0.4 Perl/v5.8.8)
+443/tcp open  ssl/http Apache httpd 2.2.3 ((CentOS) DAV/2 PHP/5.1.6 mod_python/3.2.8 Python/2.4.3 mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 mod_perl/2.0.4 Perl/v5.8.8)
+22/tcp   open     ssh            (protocol 1.99)
+23/tcp   open     tcpwrapped
+2049/tcp open     nfs?
+4321/tcp open     ssl/rwhois?
+443/tcp open  https?
+11000/tcp open  irisa?
+25/tcp  open  smtp    Cisco PIX sanitized smtpd
+110/tcp open  pop3    Cyrus pop3d 2.3.7-Invoca-RPM-2.3.7-7.el5
+25/tcp  open  smtp    Cisco PIX sanitized smtpd
+110/tcp open  pop3    Cyrus pop3d 2.3.7-Invoca-RPM-2.3.7-7.el5

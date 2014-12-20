@@ -1,0 +1,23 @@
+53/tcp open  domain
+53/tcp open  domain
+25/tcp open  smtp    Cisco PIX sanitized smtpd
+21/tcp    open  ftp     vsftpd
+7200/tcp  open  fodms?
+51016/tcp open  unknown
+51021/tcp open  unknown
+51034/tcp open  unknown
+51038/tcp open  unknown
+51048/tcp open  unknown
+80/tcp   open   http           Apache httpd 2.2.3 ((CentOS))
+443/tcp  open   ssl/http       Apache httpd 2.2.3 ((CentOS))
+3000/tcp open   ppp?
+3001/tcp open   nessus?
+5000/tcp open   upnp?
+8080/tcp open   http           Icecast streaming media server
+53/tcp open  domain
+53/tcp open  domain
+80/tcp open  http    Apache httpd 2.2.3 ((Red Hat))
+25/tcp    open  smtp    Cisco PIX sanitized smtpd
+60000/tcp open  unknown
+62037/tcp open  unknown
+443/tcp open  ssl/http Microsoft IIS httpd 6.0

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Your Friendly North Korean Network Observer by nknetobserver</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Your Friendly North Korean Network Observer</h1>
+        <h2>Packets don&#39;t care about borders</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/nknetobserver" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h3>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h3>
+
+<p>On 17 December 2011, Kim Jong Un became the leader of North Korea.  Two days later, on 19 December 2011, I started my first scan of North Korean Internet space.  I was curious to see if their new leader would result in change on their Internet.  That was three years ago.  I've been keeping an eye on that network now and again.</p>
+
+<p>Ever been curious about what North Korea's Internet looks like?  People seem to be interested in that country's use of computers on the Internet more these days for some reason...</p>
+
+<h4>
+<a id="back-up-a-second-how-does-north-korea-get-internet-anyway" class="anchor" href="#back-up-a-second-how-does-north-korea-get-internet-anyway" aria-hidden="true"><span class="octicon octicon-link"></span></a>Back up a second, how does North Korea get Internet, anyway?</h4>
+
+<p>North Korea's Internet access is as unique as many other things about the country are.  The country is said to have a fairly large internal domestic internet disconnected from the rest of the world.  Most citizens with access to computers are only allowed to access this network, not the global computer network the rest of us connect to.  But North Korea isn't completely cut off from the world, select people in North Korea, including government officials, visitors, journalists and other select people, have access to the same network the rest of us do.</p>
+
+<p>Since only a small portion of the country has access to this network, North Korea has an extremely small presence on the Internet.  All traffic in and out of North Korea, from computers inside the country to computers anywhere else on the globe, goes through a very limited set of connections.  Generally, on a physical level, North Korean access to the Internet has been through a connection on the border with China, or through satellite links.</p>
+
+<p>All IP addresses come in blocks and those blocks come in two flavors: allocated or assigned.  Generally, allocated IP addresses are given to a network directly and are under complete control of that network.  North Korea's direct IP allocation consists of 1024 IP addresses, which is where most of their Internet-visible network exists today, these are the addresses I scanned.</p>
+
+<p>The allocated North Korean network range is 175.45.176.0/22:</p>
+
+<pre><code>inetnum:        175.45.176.0 - 175.45.179.255
+netname:        STAR-KP
+descr:          Ryugyong-dong
+descr:          Potong-gang District
+country:        KP
+status:         ALLOCATED PORTABLE
+mnt-by:         APNIC-HM
+mnt-lower:      MAINT-STAR-KP
+mnt-routes:     MAINT-STAR-KP
+changed:        20091221
+source:         APNIC
+</code></pre>
+
+<p>North Korea also has two more blocks that are <em>assigned</em> to it, which means that another network has ultimate control over the addresses, but North Korea's computers are allowed to use them:</p>
+
+<ul>
+<li>210.52.109.0/24 — this block is assigned to North Korea through China Unicom and was their original source of IP addresses before they were allocated their first block:</li>
+</ul>
+
+<pre><code>inetnum:        210.52.109.0 - 210.52.109.255
+netname:        KPTC
+country:        CN
+descr:          Customer of CNC
+status:         ASSIGNED NON-PORTABLE
+changed:        20040803
+mnt-by:         MAINT-CN-ZM28
+source:         APNIC
+</code></pre>
+
+<ul>
+<li>77.94.35.0/24 — this block is assigned to North Korea by <a href="http://satgate.net/">SatGate</a>, a Russian Satellite company, and is the only block of known North Korea IPs under the European RIPE Registry as opposed to APNIC, the registry for the Asian Pacific region:</li>
+</ul>
+
+<pre><code>inetnum:        77.94.35.0 - 77.94.35.255
+netname:        SATGATE-FILESTREAM
+descr:          Korean network
+country:        KP
+admin-c:        AVA205-RIPE
+admin-c:        EVE7-RIPE
+tech-c:         PPU4-RIPE
+tech-c:         ANM47-RIPE
+status:         ASSIGNED PA
+mnt-by:         SATGATE-MNT
+source:         RIPE
+</code></pre>
+
+<p><a href="http://satgate.net/images/new_maps/map_index.jpg"><img src="https://raw.github.com/nknetobserver/nknetobserver.github.io/master/images/satgate.jpg" align="center" alt="SatGate Coverage Map"></a></p>
+
+<p>As you can see on the coverage map for SatGate, service to North Korea isn't likely coming from SatGate's known satellite beams.  Instead, while the IP address allocation is coming through SatGate, the Internet service itself is <a href="https://www.northkoreatech.org/2012/04/08/dprk-gets-second-link-to-internet/">likely coming through IntelSat</a>.  There's a number of IntelSat Satellites which could be providing service.  IntelSat 22 has a good coverage pattern of the area:</p>
+
+<p><img src="https://raw.github.com/nknetobserver/nknetobserver.github.io/master/images/intelsat22.png" align="center" alt="IntelSat 22 Coverage Map"></p>
+
+<p>But a bunch of their other satellites also provide coverage to parts of the Korean Peninsula with varying degrees of strength.</p>
+
+<p>Most of the data we have, particularly the data gathered by the excellent <a href="http://research.dyn.com/2013/03/north-korea-suffers-outage/">Dyn Research</a> (neé Renesys), seems to indicate that almost all North Korean traffic routes through China Unicom.  The satellite connection is just a backup.</p>
+
+<p>Anyway, long story short.  My port scans focus solely on the 1024 IP addresses allocated to North Korea directly.  This also appears to be the addresses the North Korean Internet services are actively using.</p>
+
+<h4>
+<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h4>
+
+<p>I've been doing some scans for a while.  Unfortunately not all of them completed, for various reasons.  I've included the ones that got a good section of the IP space.  Three of them (March 2012, June 2014 &amp; September 2014) are complete scans of the block.  The rest are partial scans, usually hitting 80% of the block or so, before the log was truncated.  All my scans were generated using the following commands with the well-known <a href="http://nmap.org/">nmap</a> port scanner:</p>
+
+<pre><code>nmap -p1-65535 -sV -O 175.45.176.0/22 -T4 &gt; nk.scan &amp;
+nmap -p1-65535 -sV -O 175.45.176.0/22 -T4 -Pn &gt; nkall.scan &amp;
+</code></pre>
+
+<p>Essentially, I scanned every port on every IP address, asking nmap to do its best with service detection and OS detection.</p>
+
+<h4>
+<a id="raw-data" class="anchor" href="#raw-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Raw Data</h4>
+
+<p>Feel free to browse through the scan logs.  <a href="https:///github.com/nknetobserver/nknetobserver.github.io/tree/master/scans/">You can find them here.</a>  Share what you find.</p>
+
+<p>There's also a filtered.scan file in each directory which has some basic filtering away of non-essential information.  Feel free to browse through that instead of the raw logs.</p>
+
+<h4>
+<a id="some-things" class="anchor" href="#some-things" aria-hidden="true"><span class="octicon octicon-link"></span></a>Some things I've noticed</h4>
+
+<p>One of the things I was most interested in is trying to determine whether or not the number of visible computers on the Internet increased in North Korea after the power transition from Kim Jong Il to Kim Jong Un.  The answer there is that for the most part, it hasn't increased much in terms of number of directly visible hosts, but if you look at the scans, you get the impression they're using it more.</p>
+
+<h5>
+<a id="infrastructure" class="anchor" href="#infrastructure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Infrastructure</h5>
+
+<p>You can also tell a bit about what North Korea's infrastructure looks like and how they run things.  First off, most of North Korea's infrastructure runs on Linux. This probably isn't a huge surprise, since we know North Korea has their own Linux distro, <a href="https://en.wikipedia.org/wiki/Red_Star_OS">Red Star OS</a>, so it's easy to guess they might be fans.  Luckily, Apache tends to report the flavor of Linux.  And indeed, starting in scans this year, you see that some of their public facing web servers are running RedStar:</p>
+
+<pre><code>Nmap scan report for naenara.com.kp (175.45.176.67)
+PORT    STATE SERVICE VERSION
+80/tcp  open  http    Apache httpd 2.2.15 ((RedStar 3.0)  DAV/2 PHP/5.3.3 mod_ssl/2.2.15 OpenSSL/1.0.0-fips)
+</code></pre>
+
+<p>The latest scan includes three RedStar machines.  Interestingly, the Red Hat machines they had running in earlier scans disappeared about this time, so it might be they deployed Red Star OS to replace their Red Hat machines.</p>
+
+<p>They also use CentOS (4 in the latest scan, more than RedStar), a number of machines that don't report the flavor used and one machine which merely reports (Unix).</p>
+
+<p>North Korea generally wants your new software stacks to get off their lawn.  They haven't embraced the Web 2.X rails chop shop style web development popular in some other countries.  Instead their webservers have active modules or services for JSP, PHP, Perl and Python.  Their choice of server software is similar: Apache for HTTP (web), BIND for DNS and Cisco equipment at the border.  For SMTP (email), they expose a bunch of different services, from Cisco PIX smptd running on their routers, to sendmail on a machine.  Their mailservers sometimes expose Cyrus on POP3's port.  Oh, they're also into Icecast for their streaming media servers, though it's unclear whether they're still using the same thing now.  They've also had some Windows machines running IIS, (up until about 2013 or so) so they've got a more diverse infrastructure environment going on than just Linux machines everywhere.</p>
+
+<p>For the most part, their infrastructure hasn't changed a whole bunch over the period I've been scanning them.  Though North Korea does seem to bring up an increasing number of sites running on the various webservers they have on their slice of the Internet.</p>
+
+<p>One of their routers appear to be configurable remotely, which is one of those things likely to catch eyes:</p>
+
+<pre><code>Nmap scan report for 175.45.178.129
+Not shown: 65523 closed ports
+PORT     STATE    SERVICE        VERSION
+22/tcp   open     ssh            Cisco SSH 1.25 (protocol 1.99)
+23/tcp   open     telnet         Cisco router telnetd
+80/tcp   open     http           Cisco IOS http config
+443/tcp  open     ssl/http       Cisco IOS http config
+</code></pre>
+
+<p>So that's a quick view of some of the visible infrastructure-y parts of their network.  I just grabbed the highlights, leaning towards the more current scans.  There's a bunch of different services running, browse through the full scans for more.</p>
+
+<h5>
+<a id="client-machines" class="anchor" href="#client-machines" aria-hidden="true"><span class="octicon octicon-link"></span></a>Client Machines</h5>
+
+<p>More interesting is the computers that show up on their network, even for brief periods of time.  It seems that while most computers in North Korea are kept behind the edge infrastructure, some computer does show up right on the public Internet.</p>
+
+<h6>
+<a id="apples-apples-everywhere-but-not-a-bite-to-eat" class="anchor" href="#apples-apples-everywhere-but-not-a-bite-to-eat" aria-hidden="true"><span class="octicon octicon-link"></span></a>Apples apples everywhere, but not a bite to eat</h6>
+
+<p>In a 20 March 2012 scan, I saw MacBook Air that reported itself as 4,1 model which means it was a "Late 2008" model.  It's got a pretty unusual networking footprint, not something you see out of the box:</p>
+
+<pre><code>map scan report for 175.45.177.38
+Host is up (0.35s latency).
+Not shown: 65521 closed ports
+PORT     STATE    SERVICE        VERSION
+22/tcp   open     ssh            OpenSSH 5.6 (protocol 2.0)
+88/tcp   open     kerberos-sec   Microsoft Windows kerberos-sec
+135/tcp  filtered msrpc
+136/tcp  filtered profile
+137/tcp  filtered netbios-ns
+138/tcp  filtered netbios-dgm
+139/tcp  filtered netbios-ssn
+445/tcp  filtered microsoft-ds
+548/tcp  open     afp?
+593/tcp  filtered http-rpc-epmap
+3689/tcp open     rendezvous?
+4444/tcp filtered krb524
+4488/tcp open     unknown
+5900/tcp open     vnc            Apple remote desktop vnc
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at http://www.insecure.org/cg
+i-bin/servicefp-submit.cgi :
+SF-Port548-TCP:V=5.50%I=7%D=3/20%Time=4F687DAA%P=x86_64-redhat-linux-gnu%r
+SF:(SSLSessionReq,223,"\x01\x03\0\0Q\xec\xff\xff\0\0\x02\x13\0\0\0\0\x000\
+SF:0&gt;\0b\0\0\x9f\xfb\x1badministrator\xd5s\x20MacBook\x20Air\0\x9b\0\xab\0
+SF:\xff\x01p\x01\x8f\rMacBookAir4,1\x05\x06AFP3\.4\x06AFP3\.3\x06AFP3\.2\x
+SF:06AFP3\.1\x06AFPX03\x06\tDHCAST128\x04DHX2\x06Recon1\rClient\x20Krb\x20
+SF:v2\x03GSS\x0fNo\x20User\x20Authent\x15\+\xc3\xd9\xf9Q\[\xc7\xa1\x02\xa7
+SF:D\x88D\xb2\(\x05\x08\x02\xaf-\xb1&amp;\x02\$\x14\x07\xfe\x80\0\0\0\0\0\0\x0
+SF:2\0\0\xff\xfe\0\r\x06\x02\$\x14\x07\xfe\x80\0\0\0\0\0\0b\xc5G\xff\xfe\x
+SF:03\[f\x02\$\x14\x07\xfd\0e\x87R\xd7!\xa4b\xc5G\xff\xfe\x03\[f\x02\$\x0f
+SF:\x04175\.45\.177\.38\x01oafpserver/LKDC:SHA1\.AA6C3E197C870B839764D57E8
+SF:9AF4A940C95B060@LKDC:SHA1\.AA6C3E197C870B839764D57E89AF4A940C95B060\0\x
+SF:1dadministrator\xe2\x80\x99s\x20MacBook\x20Air\0\0\0\x80`~\x06\x06\+\x0
+</code></pre>
+
+<p>My guess is this means the MacBook was running <a href="http://resources.jamfsoftware.com/archive/Recon_Suite_Administrators_Guide.pdf">RECON Suite</a> which is apparently some sort of enterprise system management software.  I'm not too familiar with it.</p>
+
+<p>Bottom line: there are MacBooks in North Korea.  This one might be some journalist's machine, which seems like a likely explanation.  Though there are really more services running on it than one would think would be a good idea.  VNC?  On public North Korean IP space?  You sure that's a good idea?</p>
+
+<h6>
+<a id="virtualization" class="anchor" href="#virtualization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Virtualization</h6>
+
+<p>Lest you think that North Korea is completely backwards and can't get keep up with new technologies, let's set something straight right now. They've totally got VMware:</p>
+
+<pre><code>Nmap scan report for 175.45.178.134
+Not shown: 65534 filtered ports
+PORT    STATE SERVICE     VERSION
+912/tcp open  vmware-auth VMware Authentication Daemon 1.0 (Uses VNC, SOAP)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose|phone
+Running: Microsoft Windows 2008|Phone|Vista|7
+OS CPE: cpe:/o:microsoft:windows_server_2008::beta3 cpe:/o:microsoft:windows cpe:/o:microsoft:windows_vista::- cpe:/o:microsoft:windows_vista::sp1 cpe:/o:microsoft:windows_7
+OS details: Microsoft Windows Server 2008 Beta 3, Microsoft Windows Phone 7.5, Microsoft Windows Vista SP0 or SP1, Windows Server 2008 SP1, or Windows 7, Microsoft Windows Vista SP2, Windows 7 SP1, or Windows Server 2008
+</code></pre>
+
+<p>This looks like your standard Windows machine running in a VM.  I didn't see evidence of these on the network until September 2014 or so.  Which means exposing virtual machines on the public Internet may be a newer thing for them. But even so, they've probably been playing with it inside their internal network for awhile now.</p>
+
+<h4>
+<a id="farewell" class="anchor" href="#farewell" aria-hidden="true"><span class="octicon octicon-link"></span></a>Farewell!</h4>
+
+<p>Enjoy the scans, have fun, let folks know if you see anything interesting.</p>
+
+<h4>
+<a id="credits-sources-etc" class="anchor" href="#credits-sources-etc" aria-hidden="true"><span class="octicon octicon-link"></span></a>Credits, Sources, etc.</h4>
+
+<p>Your friendly North Korean network observer: nknetobserver<br>
+Excellent routing analysis: Renesys (now Dyn Research)<br>
+Other analysis of North Korea's network space: <a href="http://h30499.www3.hp.com/hpeb/attachments/hpeb/off-by-on-software-security-blog/388/2/HPSR%20SecurityBriefing_Episode16_NorthKorea.pdf">HP Security Research</a><br>
+SatGate coverage map: <a href="http://satgate.net/images/new_maps/map_index.jpg">http://satgate.net/images/new_maps/map_index.jpg</a><br>
+IntelSat coverage maps: <a href="http://exnetapps.intelsat.com/flash/coverage-maps/index.html">http://exnetapps.intelsat.com/flash/coverage-maps/index.html</a></p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>

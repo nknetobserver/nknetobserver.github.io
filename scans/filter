@@ -1,0 +1,1 @@
+cat nkall.scan | grep -v "Host is up" | grep -v "Too many fingerprints match this host to give specific OS details" | grep -v "All 65535 scanned ports" > filtered.scan

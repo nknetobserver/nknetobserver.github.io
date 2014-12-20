@@ -1,0 +1,2 @@
+nmap -p1-65535 -sV -O 175.45.176.0/22 -T4 > nk.scan &
+nmap -p1-65535 -sV -O 175.45.176.0/22 -T4 -Pn > nkall.scan &

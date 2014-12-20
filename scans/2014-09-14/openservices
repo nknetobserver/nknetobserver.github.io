@@ -1,0 +1,30 @@
+53/tcp open  domain  ISC BIND 9.8.1
+53/tcp open  domain  ISC BIND 9.8.1
+53/tcp open  domain  ISC BIND 9.8.1
+53/tcp open  domain  ISC BIND 9.8.1
+80/tcp  open  http    Apache httpd 2.2.15 ((RedStar 3.0)  DAV/2 PHP/5.3.3 mod_ssl/2.2.15 OpenSSL/1.0.0-fips)
+110/tcp open  pop3?
+80/tcp open  http    Apache httpd 2.2.15 ((CentOS) PHP/5.3.3 mod_antiloris/0.4)
+25/tcp open  smtp    Sendmail 8.13.8/8.13.8
+80/tcp open  http    Apache Tomcat/Coyote JSP engine 1.1
+80/tcp   open  http    Apache httpd 2.2.15 ((CentOS) mod_wsgi/3.2 Python/2.6.6 PHP/5.3.3 mod_perl/2.0.4 Perl/v5.10.1 mod_antiloris/0.4)
+1935/tcp open  rtmp?
+80/tcp   open  http    Apache httpd 2.2.15 ((CentOS) mod_wsgi/3.2 Python/2.6.6 PHP/5.3.3 mod_perl/2.0.4 Perl/v5.10.1 mod_antiloris/0.4)
+1935/tcp open  rtmp?
+80/tcp open  http    Apache httpd 2.2.15 ((RedStar 3.0))
+80/tcp open  http    Apache Tomcat/Coyote JSP engine 1.1
+80/tcp  open  http    Apache httpd 2.2.15 ((RedStar 3.0)  DAV/2 PHP/5.3.3 mod_ssl/2.2.15 OpenSSL/1.0.0-fips)
+110/tcp open  pop3?
+80/tcp open  http    Apache httpd 2.2.15 ((CentOS) PHP/5.3.3 mod_antiloris/0.4)
+80/tcp open  http    Apache httpd 2.4.7 ((Unix) OpenSSL/1.0.1f mod_perl/2.0.8-dev Perl/v5.16.3)
+22/tcp   open     ssh            Cisco SSH 1.25 (protocol 1.99)
+23/tcp   open     telnet         Cisco router telnetd
+80/tcp   open     http           Cisco IOS http config
+443/tcp  open     ssl/http       Cisco IOS http config
+36632/tcp open  unknown
+912/tcp open  vmware-auth VMware Authentication Daemon 1.0 (Uses VNC, SOAP)
+443/tcp open  https?
+25/tcp  open  smtp    Cisco PIX sanitized smtpd
+110/tcp open  pop3    Cyrus pop3d 2.3.7-Invoca-RPM-2.3.7-7.el5
+25/tcp  open  smtp    Cisco PIX sanitized smtpd
+110/tcp open  pop3    Cyrus pop3d 2.3.7-Invoca-RPM-2.3.7-7.el5

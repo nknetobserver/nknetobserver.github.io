@@ -1,0 +1,42 @@
+53/tcp open  domain  ISC BIND 9.8.1
+25/tcp open  smtp    Cisco PIX sanitized smtpd
+21/tcp    open  ftp     vsftpd
+7200/tcp  open  fodms?
+51017/tcp open  unknown
+51020/tcp open  unknown
+51022/tcp open  unknown
+51026/tcp open  unknown
+51034/tcp open  unknown
+51035/tcp open  unknown
+51038/tcp open  unknown
+53/tcp open  domain  ISC BIND 9.8.1
+53/tcp open  domain  ISC BIND 9.8.1
+80/tcp open  http    Apache httpd 2.2.3 ((Red Hat))
+25/tcp open  smtp    Cisco PIX sanitized smtpd
+80/tcp   open     http           Microsoft IIS httpd 6.0
+443/tcp  open     ssl/http       Microsoft IIS httpd 6.0
+1025/tcp open     msrpc          Microsoft Windows RPC
+1026/tcp open     msrpc          Microsoft Windows RPC
+1027/tcp open     msrpc          Microsoft Windows RPC
+1043/tcp open     msrpc          Microsoft Windows RPC
+1433/tcp open     ms-sql-s       Microsoft SQL Server 2000 8.00.311; RTMa
+1801/tcp open     msmq?
+2103/tcp open     msrpc          Microsoft Windows RPC
+2105/tcp open     msrpc          Microsoft Windows RPC
+2107/tcp open     msrpc          Microsoft Windows RPC
+3389/tcp open     ms-wbt-server  Microsoft Terminal Service
+80/tcp   open  http     Apache httpd 2.2.3 ((CentOS) DAV/2 PHP/5.1.6 mod_python/3.2.8 Python/2.4.3 mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 mod_perl/2.0.4 Perl/v5.8.8)
+110/tcp  open  pop3     qmail pop3d
+443/tcp  open  ssl/http Apache httpd 2.2.3 ((CentOS) DAV/2 PHP/5.1.6 mod_python/3.2.8 Python/2.4.3 mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 mod_perl/2.0.4 Perl/v5.8.8)
+554/tcp  open  rtsp?
+8080/tcp open  http     Icecast streaming media server
+80/tcp  open  http     Apache httpd 2.2.3 ((CentOS) DAV/2 PHP/5.1.6 mod_python/3.2.8 Python/2.4.3 mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 mod_perl/2.0.4 Perl/v5.8.8)
+443/tcp open  ssl/http Apache httpd 2.2.3 ((CentOS) DAV/2 PHP/5.1.6 mod_python/3.2.8 Python/2.4.3 mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 mod_perl/2.0.4 Perl/v5.8.8)
+22/tcp    open     tcpwrapped
+23/tcp    open     telnet?
+2049/tcp  open     nfs?
+4321/tcp  open     ssl/rwhois?
+23/tcp  open     telnet  Cisco router telnetd
+8080/tcp open  http-proxy?
+23/tcp  open     telnet  Cisco router telnetd
+23/tcp   open     telnet         Cisco router telnetd

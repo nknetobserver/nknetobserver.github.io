@@ -1,0 +1,22 @@
+53/tcp open  domain
+53/tcp open  domain
+53/tcp open  domain?
+53/tcp open  domain?
+110/tcp open  pop3?
+80/tcp  open   http    Apache httpd 2.2.10 ((Linux/SUSE))
+25/tcp open  smtp    Sendmail 8.13.8/8.13.8
+80/tcp open  http    Apache Tomcat/Coyote JSP engine 1.1
+1935/tcp open  rtmp?
+1935/tcp open  rtmp?
+80/tcp open  http    Apache Tomcat/Coyote JSP engine 1.1
+80/tcp  open  http    Apache httpd 2.2.15 ((RedStar 3.0)  DAV/2 PHP/5.3.3 mod_ssl/2.2.15 OpenSSL/1.0.0-fips)
+110/tcp open  pop3?
+80/tcp open  http    Apache httpd 2.2.15 ((CentOS) PHP/5.3.3 mod_antiloris/0.4)
+22/tcp   open     ssh            Cisco SSH 1.25 (protocol 1.99)
+23/tcp   open     telnet         Cisco router telnetd
+80/tcp   open     http           Cisco IOS http config
+443/tcp  open     ssl/http       Cisco IOS http config
+443/tcp open  https?
+25/tcp open  smtp    Cisco PIX sanitized smtpd
+25/tcp  open  smtp    Cisco PIX sanitized smtpd
+110/tcp open  pop3    Cyrus pop3d 2.3.7-Invoca-RPM-2.3.7-7.el5
